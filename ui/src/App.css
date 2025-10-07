@@ -246,6 +246,20 @@
   font-size: 0.9rem;
 }
 
+.results {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background: #f8f8ff;
+}
+input[type="number"] {
+  width: 350px;
+}
+form > div {
+  margin: 0.5em 0;
+}
+
 /* Animations */
 @keyframes spin {
   from {
