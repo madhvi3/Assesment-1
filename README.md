@@ -1,23 +1,85 @@
-This is a Commission Calculator that was developed using the React and .NET on the front and back end respectively. My initial response to the task is that I took time to figure out what had to be done and how both the parts would relate. I also then divided the entire project into smaller segments once I had a solid idea which would be to set up the backend API, create a React UI, process the inputs and validations, format the output, and lastly bind both ends together to allow the flow of calculation to happen smoothly.
+# 🧮 Commission Calculator — Technical Assessment
 
-I began working on the backend logic in order to ensure that the commission formulas were correct as well as checking the endpoints were responding appropriately. Then I did the frontend, in which I received inputs, simple validation, and ensured that all that was displayed was in the UK currency format. When the preparation was complete, I paid attention to the integration and testing in order to make sure that data was flowing properly between the frontend and the backend.
+> Finish and ship a production-quality Commission Calculator for **Avalpha Technologies**.  
+> The API and React app are scaffolded; the controller exists but the logic & wiring are incomplete **by design**.
 
-I also added a minor failover on the frontend- in case the backend dies or breaks, the application will be able to calculate commissions independently and issue a warning instead of failing. This helped in making it more safe and easy.
+---
 
+## 🚀 What you’ll build
 
-How to run the app:
+- Connect **frontend (React)** ↔ **backend (C#/.NET)**  
+- Implement commission calculations in the C# controller  
+- Deliver clean, production-ready code (tests, structure, readability)
 
-⦁	First, go to the backend folder and run dotnet run. If you get a “not secure” warning in the browser, trust the dev certificate so the HTTPS connection works.
+⏱ **Timebox:** up to **4 hours max**. Be pragmatic. Prioritize correctness, clarity, and the essentials.
 
-⦁	Next, go to the frontend folder, run npm install if its your first time, then npm start to launch the React app.
+---
 
-⦁	Open your browser and go to http://localhost:3000 to see the app.
+## 🔀 Before you start (Fork + Setup)
 
-⦁	You can also check the API docs at https://localhost:5000/swagger to see and test the endpoints directly.
+1. **Fork** this repository into your own GitHub account.  
+2. **Clone** your fork locally.  
+3. Work in a feature branch, e.g. `feat/commission-impl`.  
+4. When done, push to your fork and open a **Pull Request** back to your fork’s `main`.  
+   - Add a short **README-notes.md** describing decisions, trade-offs, and anything unfinished.  
+5. Share your fork/PR link with us.
 
+> ✅ We want to see how you think, structure, and ****. Small, meaningful commits > one giant commit.
 
-I tested the system with different types of data—normal, large, zero, and even invalid numbers. Everything worked fine, and the UI handled errors gracefully. The results always matched expectations, and formatting stayed consistent.
+---
 
-As far as improvements go, I believe this project has a lot of potential to be enhanced further. We can go as deep as we want—adding better analytics, automation, or even cloud integration—but for now, I’ve completed all the tasks on the checklist and made sure the core system is reliable and ready.
+## 🧠 Business Rules
 
-Overall, this project helped me understand how to connect a React frontend with a .NET backend in a clean, structured way. It also improved my approach to planning, testing, and debugging full-stack applications. I really enjoyed building this and hope to work with Avalpha Technologies on more such projects in the future. Thank you for this opportunity!
+At **Avalpha Technologies**:
+- **Local Sales Commission:** **20%**
+- **Foreign Sales Commission:** **35%**
+
+Competitors pay:
+- **Local:** **2%**
+- **Foreign:** **7.55%**
+
+**Inputs:**
+- `localSalesCount` (number)  
+- `foreignSalesCount` (number)  
+- `averageSaleAmount` (currency/number)  
+
+**Output (example):**
+
+Local Sales count: 10
+Foreign Sales count: 10
+Average Sales Amount: £100
+
+Avalpha Commission:
+
+Local = 20% * 10 * 100 = £200
+
+Foreign = 35% * 10 * 100 = £350
+
+Total = £550
+
+Competitor Commission:
+
+Local = 2% * 10 * 100 = £20
+
+Foreign = 7.55% * 10 * 100 = £75.5
+
+Total = £95.5
+
+## 🧩 Your Tasks (Checklist)
+
+- [ ] Wire up the **React frontend** to call the backend API  
+- [ ] Implement calculation logic 
+- [ ] Validate inputs (numbers ≥ 0, sensible upper bounds)  
+- [ ] Return a typed, well-structured response (DTO)  
+- [ ] Display results in the UI with clear labels and currency formatting  
+- [ ] Handle errors gracefully (backend & UI)  
+- [ ] Provide basic **docs**: how to run, how to test, decisions  
+- [ ] Keep commits small and messages clear  
+
+---
+
+## 🧱 Tech Stack
+
+- **Frontend:** React (Vite/CRA), TypeScript preferred (if scaffolded), Fetch/Axios OK  
+- **Backend:** .NET (C#), minimal API or MVC controller  
+- **Tests:** xUnit/NUnit + React Testing Library / Vitest/Jest  
